@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+    
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #f4f4f9;
+            color: #333;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            text-align: center;
+            padding: 50px 20px;
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            color: white;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.2em;
+        }
+
+        #dark-mode-toggle {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: white;
+            color: #333;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        #dark-mode-toggle:hover {
+            background: #333;
+            color: white;
+        }
+
+        #projetos {
+            padding: 40px 20px;
+            text-align: center;
+            flex: 1;
+        }
+
+        #projetos h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .projetos-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .projeto-card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            padding: 20px;
+            text-align: left;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .projeto-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .projeto-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .projeto-card h3 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .projeto-card p {
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 15px;
+            background: #6a11cb;
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 0.9em;
+            transition: background 0.3s ease;
+        }
+
+        .btn:hover {
+            background: #2575fc;
+        }
+
+        footer {
+            background: #222;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+        }
+
+        footer a {
+            color: #2575fc;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 class="fade-in">Olá, sou Cleverton</h1>
+        <p class="fade-in">Desenvolvedor Web | Criador de Soluções Criativas</p>
+       <p> Conhecimento em <strong> HTML, CSS e JavaScript</strong>, e forte afinidade por tecnologia e design. Criativo e detalhista, utiliza habilidades em desenho para desenvolver soluções visuais e funcionais. Perfil paciente e comprometido com a entrega de projetos de qualidade. </p> 
+        <button id="dark-mode-toggle" class="btn">Modo Escuro</button>
+    </header>
+
+    <section id="projetos">
+        <h2>Meus Projetos</h2>
+        <div class="projetos-container">
+            <div class="projeto-card fade-up">
+                
+                <h3>Produto Sherek</h3>
+                <p>Simples e responsiva criada para apresentar minhas habilidades, informações de contato. Desenvolvido com <strong>HTML, CSS e JavaScript</strong>, é uma vitrine do meu trabalho na área de desenvolvimento web.</p>
+                <a href="https://ccm06.github.io/projeto01/" target="_blank" class="btn">Ver no GitHub</a>
+            </div>
+            <div class="projeto-card fade-up">
+                
+                <h3>Relógio Digital</h3>
+                <p>Um projeto focado em demonstrar o uso de<strong> HTML e CSS</strong> para criar um design atrativo e funcional. O site é responsivo e foi desenvolvido para praticar layouts modernos e usabilidade.</p>
+                <a href="https://ccm06.github.io/Projeto-02/" target="_blank" class="btn">Ver no GitHub</a>
+            </div>
+            <div class="projeto-card fade-up">
+                
+                <h3>Gerador de Frases Aleatórias
+                </h3>
+                <p>Este projeto explora recursos dinâmicos com <strong>JavaScript</strong>, criando interatividade e funcionalidades personalizadas. .</p>
+                <a href="https://ccm06.github.io/projeto03.github.io/" target="_blank" class="btn">Ver no GitHub</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>Perfil <a href="https://github.com/CCM06" target="_blank">Github</a> e <a href="https://www.instagram.com/clevsweb/profilecard/?igsh=b3UwcW9qYmF1Mzc4" target="_blank">Instagram</a></p>
+    </footer>
+
+    <script>
+        // Modo escuro
+        const toggleButton = document.getElementById('dark-mode-toggle');
+        toggleButton.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            const isDark = document.body.classList.contains('dark-mode');
+            toggleButton.textContent = isDark ? 'Modo Claro' : 'Modo Escuro';
+        });
+
+        // Estilo para o modo escuro
+        document.head.insertAdjacentHTML('beforeend', `
+            <style id="dark-mode-style">
+                .dark-mode {
+                    background-color: #121212;
+                    color: #f4f4f9;
+                }
+                .dark-mode header {
+                    background: linear-gradient(135deg, #333, #555);
+                }
+                .dark-mode .projeto-card {
+                    background: #1e1e1e;
+                    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+                }
+                .dark-mode footer {
+                    background: #1e1e1e;
+                }
+            </style>
+        `);
+    </script>
+</body>
+</html>
